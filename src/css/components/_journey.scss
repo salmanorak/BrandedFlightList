@@ -1,0 +1,48 @@
+@import 
+    '../mixins/common-mixins.scss', 
+    '../variables/common-variables.scss',
+    './flight-item.scss';
+
+
+.journey {
+	.direction {
+		display: inline-block;
+		margin-left: 15px;
+		padding: 2px 60px 2px 5px;
+		background-color: red;
+		color: white;
+		&:before{
+			@include icon('plane-departure');
+			@include transition();
+			font-size: 14px;
+			padding-right: 5px;
+		}
+	}
+	.selected-flight{
+		display: none;
+	}
+	&.selected {
+		.selected-flight{
+			display: block
+		}
+		#flight-list{
+			display: none;
+		}
+	}
+	.show-flight-list {
+		display: inline-block;
+		margin-left: 7px;
+		font-style: italic;
+		border-radius: 5px;
+		&:before{
+			@include icon('pencil');
+			@include transition();
+			margin-right: 5px;
+		}
+	}
+	.title{
+		margin : 10px 15px;
+		font-size:24px;
+	}
+
+}

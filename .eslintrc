@@ -1,0 +1,14 @@
+{
+    "extends": "rallycoding",
+    "globals": {
+      "document": true,
+      "foo": true,
+      "window": true,
+      "CustomEvent": true,
+    },
+    "rules":{
+        "max-len":0,
+        "no-unused-expressions" : 0,
+        "no-param-reassign":0
+    }
+  }

@@ -1,0 +1,137 @@
+@import 
+    '../mixins/common-mixins.scss', 
+    '../variables/common-variables.scss',
+    '../components/cabin-list';
+
+#flight-list{
+	display: flex;
+    flex-direction: column;
+}
+.flight-item{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 0 10px;
+    .summary{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 5px;
+        .flight-summary{
+            position: relative;
+            flex:5;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            box-shadow: 2px 2px 5px 0px rgba(173,175,179,1);
+            padding: 25px 5px;
+            min-height: 40px;
+            &:before{
+                @include empty-content;
+                @include vertical-align-center;
+                position: absolute;
+                left: 70px;
+                height: 1px;
+                width: 55%;
+                background-color: gray;
+            }
+            .port{
+                font-weight: 300;
+                color:gray;
+            } 
+            .time{
+                font-weight:700;
+            }
+            .flight-logo{
+                @include horizantal-align-center;
+                position: absolute;
+                display: flex;
+                justify-content: space-evenly;
+                height: 17px;
+                width: 75%;
+                bottom: 25px;
+                .segment-carrier-logo{
+                    height: 17px;
+                    width: auto;
+                }
+            }
+            .layover-port-list {
+                @include horizantal-align-center;
+                position: absolute;
+                display: flex;
+                top: 24%;
+                font-size: 10px;
+                width: 75%;
+                .direct{
+                    @include horizantal-align-center;
+                    position: absolute;
+                }
+                .layover-port-item{
+                    @include horizantal-align-center;
+                    position: absolute;
+                    &:after{
+                        @include empty-content;
+                        @include horizantal-align-center;                       
+                        position: absolute;
+                        bottom: -19px;
+                        height: 15px;
+                        width: 15px;
+                        border-radius: 50%;
+                        border: 1px solid gray;
+                        background-color: white;
+                    }
+                }
+            }
+        }
+        .best-price{
+            position: relative;
+            flex:2;
+            box-shadow: 2px 2px 5px 0px rgba(173,175,179,1);
+            padding: 25px 5px;
+            margin-left: 5px;
+            min-height: 40px;
+            line-height: 40px;
+
+            .brand {
+                position: absolute;
+                top:0;
+                left: 5px;
+                font-size:12px;
+            }
+            .decimal{
+                line-height: 35px;
+                margin-left:-4px;
+            }
+        }
+        .icon{
+            @include transition();
+            position: absolute;
+            right: 10px;
+            color: red;
+            &:after{
+                @include icon('arrow-right');
+                @include transition();
+                font-size: 1.2em;
+            }
+        }
+    }
+    .detail{
+        display: none;;
+        position: absolute;
+        left: 10px;
+        top: 75px;
+        font-size: 12px;
+        color: blue;
+        width: 120px;
+        text-decoration: underline;
+        font-style: italic;
+    }
+    &.slideDown .icon{
+        @include transition();
+        transform: rotate(90deg);
+    }
+}
+
+

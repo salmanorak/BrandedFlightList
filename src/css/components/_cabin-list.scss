@@ -1,0 +1,96 @@
+@import 
+	'../mixins/common-mixins.scss', 
+	'../variables/common-variables.scss';
+
+.cabin-list-container{
+	flex-direction: column;
+	margin-top: 10px;
+	@include transition(2s);
+	box-shadow: 5px 8px 5px 0px rgba(173,175,179,1);
+	margin: 10px;
+	.cabin{
+		display: flex;
+		justify-content: center;
+		.cabin-info{
+			text-align: center;
+			flex: 1;
+			writing-mode: vertical-rl;
+			transform: rotate(180deg);
+			line-height: 50px;
+			min-height: 120px;
+		}
+		.brand-list{
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			flex: 8;
+			.brand-item{
+				position: relative;
+				padding: 10px 10px 10px 60px;
+				&:before{
+					@include empty-content; 
+					@include vertical-align-center;
+					position: absolute;
+					left:20px;
+					height : 20px;
+					width: 20px;
+					border-radius: 50%;
+					border: 2px solid gray;
+				}&:after{
+					@include empty-content; 
+					@include vertical-align-center;
+					position: absolute;
+					left:31px;
+					height : 0px;
+					width: 0px;
+					border-radius: 50%;
+					background-color: $navy-blue-color-07  ;		
+					@include transition(.2s)				
+				}
+				&:hover{
+					&:after{
+						height : 15px;
+						width: 15px;
+						left:24px;
+						@include transition()
+					}	
+				}
+				.brand-name{
+					font-weight: 600;
+					font-size: 1.2em;
+				}
+				.right-list{
+					font-size:0.8em;
+					.right-item:not(:last-child):after{
+						content: $brand-right-seperator;
+					}
+				}
+				.decimal{
+					line-height: 15px;
+					margin-left:-4px;
+				}
+			}
+			.brand-item + .brand-item{
+				border-top: 2px solid gray;
+			}
+		}
+		&.eco-cabin {
+			.cabin-info{
+				background-color: $eco-cabin-bg-color;
+			}
+			.brand-list{
+				background-color: $eco-brandlist-bg-color;
+			}
+		}
+		&.bus-cabin {
+			.cabin-info{
+				background-color: $bus-cabin-bg-color;
+				color: $bus-cabin-color;
+			}
+			.brand-list{
+				background-color: $bus-brandlist-bg-color;
+			}
+		}
+	
+	}
+}

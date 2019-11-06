@@ -1,0 +1,32 @@
+@import //mixin and variables
+	'./mixins/common-mixins.scss', 
+	'./variables/common-variables.scss';
+
+@import // components
+	'./components/price',
+	'./components/journey';
+
+body{
+	font-family: $main-font-family;
+	background-color: black;
+	user-select: none;
+}
+
+.container{
+	margin: 10px auto;
+	max-width: 500px;
+	background-color: white;
+	padding: 10px 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

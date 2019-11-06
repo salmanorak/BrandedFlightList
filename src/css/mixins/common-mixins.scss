@@ -1,0 +1,35 @@
+@mixin icon($icon, $fw:900){
+    @if($icon == "pencil"){
+        content: "\f303";
+    }@if($icon == "arrow-right"){
+        content: "\f105";
+    }@if($icon == "flight-departure"){
+        content: "\f5b0";
+    }
+    font-family: 'Font Awesome 5 Free' ;
+    font-weight: $fw; 
+}
+
+@mixin vertical-align-center {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin horizantal-align-center {
+    left: 50%;
+    transform: translateX(-50%);
+}
+@mixin align-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+@mixin empty-content{
+    content: "";
+}
+
+@mixin transition($durantion:.3s, $property:all){
+    transition: $property $durantion;
+}
+

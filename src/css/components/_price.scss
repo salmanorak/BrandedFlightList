@@ -1,0 +1,12 @@
+@import 
+    '../mixins/common-mixins.scss', 
+    '../variables/common-variables.scss';
+
+.decimal{
+    vertical-align: top;
+    font-size: 0.5em;
+    &:before{
+        content:".";
+        vertical-align: top;
+    }
+}
