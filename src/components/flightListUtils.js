@@ -1,4 +1,4 @@
-import { slide as slideHelper, findItemInArrayByProperty } from '../js/utils.js';
+import { slide as slideHelper, findItemInArrayByProperty, findParent } from '../js/utils.js';
 import { flightListData } from '../data/data.js';
 import { Flight } from '../js/models/flight';
 
@@ -131,8 +131,8 @@ function createCabinList(cabinList) {
 function createBranList(brandList, cabinIndex) {
 	let result = '<div class="brand-list">';
 	if (brandList && brandList.length <= 0) return '';	
-		brandList.forEach(brand => {
-		result += 	`<div class="brand-item" brandId='${brand.name}' cabinIndex="${cabinIndex}">
+		brandList.forEach((brand, index) => {
+		result += 	`<div class="brand-item" brandIndex='${index}' cabinIndex="${cabinIndex}">
 						<div class="brand-name">
 						${brand.name}
 						</div>
@@ -175,11 +175,11 @@ function toogleFlightDetail(e) {
 
 function selectBrand(e) {
 	const el = e.currentTarget;
-	const selectedBrand = el.attributes.brandId.value;
+	const selectedBrand = el.attributes.brandIndex.value;
 	const selectedCabinIndex = el.attributes.cabinIndex.value;
 
 		el.dispatchEvent(
-			new CustomEvent('brandSelected', { bubbles: true, detail: { name: selectedBrand, cabinIndex: selectedCabinIndex } })
+			new CustomEvent('brandSelected', { bubbles: true, detail: { brandIndex: selectedBrand, cabinIndex: selectedCabinIndex } })
 		);		
 }
 
@@ -194,16 +194,20 @@ function showSelectedFlightView(e) {
 	const journey = e.currentTarget;
 	const selectedFlightHTML = journey.querySelector('.selected-flight');
 	const flight = findItemInArrayByProperty(flightListData, 'flightId', e.detail.flightId);
-	const brand = findItemInArrayByProperty(flight.cabinList[e.detail.brand.cabinIndex].brandList, 'name', e.detail.brand.name);
-	selectedFlightHTML.innerHTML = createFlight(new Flight(flight), brand);
-	journey.querySelectorAll('.show-flight-list').forEach(item => {
-		item.addEventListener('click', showFlightList);
-	});
-	journey.classList.add('selected');
+	const brand = flight.cabinList[e.detail.brand.cabinIndex].brandList[e.detail.brand.brandIndex];
+	if (brand.price) {
+		selectedFlightHTML.innerHTML = createFlight(new Flight(flight), brand);
+		journey.querySelectorAll('.show-flight-list').forEach(item => {
+			item.addEventListener('click', showFlightList);
+		});
+		journey.classList.add('selected');
+	}
 }
 
 function showFlightList(e) {
-	e.currentTarget.parentElement.parentElement.parentElement.classList.remove('selected');
+	const journey = findParent(e.currentTarget, 'journey', 'class');
+	journey.classList.remove('selected');
+	journey.querySelector('.selected-flight .flight-item').remove();
 }
 
 export { init, toogleFlightDetail, selectBrand, selectFlight, showSelectedFlightView };

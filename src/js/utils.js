@@ -72,6 +72,30 @@ function findItemInArrayByProperty(arr, property, value) {
   return arr.find(item => item[property] === value);
 }
 
-export { slide };
+function findParent(el, selector, type) {
+  const matchCount = __(selector, type);
 
-export { findItemInArrayByProperty };
+  return matchCount ? _(el, selector, type) : `no Item with ${selector} ${type}`;
+
+  function _(el, selector, type) {
+      if (el.parentElement === document.body) return `'no Parent with ${type} ${selector}`;
+      if (type === 'class') {
+          if (el.parentElement.classList.contains(selector)) return el.parentElement;
+      } else if (type === 'id') {
+          if (el.parentElement.id === selector) return el.parentElement;
+      }
+      return _(el.parentElement, selector, type);
+  }
+
+  function __(selector, type) {
+      let matches;
+      if (type === 'class') {
+         matches = document.querySelectorAll('.'.concat(selector));
+      } else if (type === 'id') {
+         matches = document.querySelectorAll('#'.concat(selector));
+      }
+      return matches.length;
+  }
+}
+
+export { slide, findItemInArrayByProperty, findParent };
