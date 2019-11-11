@@ -33,7 +33,7 @@ class Segment {
     }
 }
 
-export class Flight {
+export class FlightData {
     constructor(flightData) {
         this.flightId = flightData.flightId;
         this.segments = flightData.segments.map(segment => new Segment(segment));

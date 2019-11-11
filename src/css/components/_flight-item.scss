@@ -3,10 +3,6 @@
     '../variables/common-variables.scss',
     '../components/cabin-list';
 
-#flight-list{
-	display: flex;
-    flex-direction: column;
-}
 .flight-item{
     position: relative;
     display: flex;

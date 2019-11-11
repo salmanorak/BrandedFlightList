@@ -18,6 +18,10 @@
 			padding-right: 5px;
 		}
 	}
+	#flight-list{
+		display: flex;
+		flex-direction: column;
+	}
 	.selected-flight{
 		display: none;
 	}
@@ -44,5 +48,6 @@
 		margin : 10px 15px;
 		font-size:24px;
 	}
+
 
 }

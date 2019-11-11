@@ -2,10 +2,10 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index2.js',
   output: {
     filename: 'app.js',
-    path: path.resolve(__dirname, 'docs'),
+    path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
         new MiniCssExtractPlugin({
@@ -17,7 +17,7 @@ module.exports = {
         rules: [
           {
             test: /\.m?js$/,
-            exclude: /(node_modules|bower_components)/,
+            exclude: /(node_modules)/,
             use: [
                 {
                     loader: 'babel-loader',
@@ -37,7 +37,7 @@ module.exports = {
             test: /\.s[ac]ss$/i,
             use: [
               {
-                loader:MiniCssExtractPlugin.loader,
+                loader: MiniCssExtractPlugin.loader,
                 options: {
                     publicPath: './dist',
                   }

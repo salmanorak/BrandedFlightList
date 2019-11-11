@@ -1,9 +1,9 @@
 import './css/main.scss';
 import { flightListData } from './data/data.js';
 import { init, toogleFlightDetail, selectBrand, selectFlight, showSelectedFlightView } from './components/flightListUtils';
-import { Flight } from './js/models/flight.js';
+import { FlightData } from './js/models/flightData.js/index.js';
 
-const flights = flightListData.map(flight => new Flight(flight));
+const flights = flightListData.map(flight => new FlightData(flight));
 
 init(flights, 'flight-list');
 

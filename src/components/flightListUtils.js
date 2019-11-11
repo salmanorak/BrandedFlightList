@@ -1,6 +1,5 @@
 import { slide as slideHelper, findItemInArrayByProperty, findParent } from '../js/utils.js';
 import { flightListData } from '../data/data.js';
-import { Flight } from '../js/models/flight';
 
 const slide = slideHelper();
 
