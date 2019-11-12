@@ -1,35 +1,22 @@
 import './css/main.scss';
-import { flightListData } from './data/data.js';
-import { init, toogleFlightDetail, selectBrand, selectFlight, showSelectedFlightView } from './components/flightListUtils';
-import { FlightData } from './js/models/flightData.js/index.js';
+import { Flight } from './components/Flight/Flight';
+import { FlightList } from './components/Flight/FlightList';
+import { JourneyList } from './components/Flight/JourneyList';
+import { Journey } from './components/Flight/Journey';
+import { data } from './data/data.component';
 
-const flights = flightListData.map(flight => new FlightData(flight));
-
-init(flights, 'flight-list');
-
-//**** Event Handling ****//
-const flightSummaryAll = document.querySelectorAll('.summary');
-
-flightSummaryAll.forEach(flightSummary => {
-	if (flightSummary) flightSummary.addEventListener('click', toogleFlightDetail);
-});
+window.customElements.define('flight-item', Flight);
+window.customElements.define('flight-list', FlightList);
+window.customElements.define('journey-item', Journey);
+window.customElements.define('journey-list', JourneyList);
 
 
-const flightListHTML = document.querySelectorAll('.flight-item');
+//**** init ****//
+init(data, 'app');
 
-flightListHTML.forEach(flight => {
-	if (flight) flight.addEventListener('brandSelected', selectFlight);
-});
-
-const brandList = document.querySelectorAll('.brand-item');
-
-brandList.forEach(brand => {
-	if (brand) brand.addEventListener('click', selectBrand);
-});
-
-const journeyList = document.querySelectorAll('.journey');
-
-journeyList.forEach(journey => {
-	if (journey) journey.addEventListener('flightSelected', showSelectedFlightView);
-});
-
+function init(flights, targetId) {
+    const targetElement = document.getElementById(targetId);
+    const element = document.createElement('journey-list');
+    targetElement.appendChild(element);
+    element.data = data;
+}
