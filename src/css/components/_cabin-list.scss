@@ -47,6 +47,9 @@
 					background-color: $navy-blue-color-07  ;		
 					@include transition(.2s)				
 				}
+				&.full:after{
+					background-color: red;
+				}
 				&:hover{
 					&:after{
 						height : 15px;

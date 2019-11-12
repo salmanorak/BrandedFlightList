@@ -1,4 +1,3 @@
-import { Flight } from '../Flight/Flight';
 import { slide as slideHelper, findParent } from '../../js/utils';
 
 const slide = new slideHelper();
@@ -83,3 +82,5 @@ export class FlightList extends HTMLElement {
         journey.querySelector('.selected-flight .flight-item').remove();
     }
 }
+
+//window.customElements.define('flight-list', FlightList);

@@ -50,6 +50,8 @@
           border-radius: 50%;
           background-color: rgba(0, 0, 128, 0.7);
           transition: all 0.2s; }
+        .cabin-list-container .cabin .brand-list .brand-item.full:after {
+          background-color: red; }
         .cabin-list-container .cabin .brand-list .brand-item:hover:after {
           height: 15px;
           width: 15px;
@@ -192,47 +194,46 @@
     transition: all 0.3s;
     transform: rotate(90deg); }
 
-.journey .direction {
-  display: inline-block;
-  margin-left: 15px;
-  padding: 2px 60px 2px 5px;
-  background-color: red;
-  color: white; }
-  .journey .direction:before {
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    transition: all 0.3s;
-    font-size: 14px;
-    padding-right: 5px; }
-
-.journey #flight-list {
-  display: flex;
-  flex-direction: column; }
-
-.journey .selected-flight {
-  display: none; }
-
-.journey.selected .selected-flight {
-  display: block; }
-
-.journey.selected #flight-list {
-  display: none; }
-
-.journey .show-flight-list {
-  display: inline-block;
-  margin-left: 7px;
-  font-style: italic;
-  border-radius: 5px; }
-  .journey .show-flight-list:before {
-    content: "\f303";
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    transition: all 0.3s;
-    margin-right: 5px; }
-
-.journey .title {
-  margin: 10px 15px;
-  font-size: 24px; }
+.journey {
+  display: block;
+  margin-top: 40px; }
+  .journey .direction {
+    display: inline-block;
+    margin-left: 15px;
+    padding: 2px 60px 2px 5px;
+    background-color: red;
+    color: white; }
+    .journey .direction:before {
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      transition: all 0.3s;
+      font-size: 14px;
+      padding-right: 5px; }
+    .journey .direction.arrival {
+      background-color: blue; }
+  .journey #flight-list {
+    display: flex;
+    flex-direction: column; }
+  .journey .selected-flight {
+    display: none; }
+  .journey.selected .selected-flight {
+    display: block; }
+  .journey.selected #flight-list {
+    display: none; }
+  .journey .show-flight-list {
+    display: inline-block;
+    margin-left: 7px;
+    font-style: italic;
+    border-radius: 5px; }
+    .journey .show-flight-list:before {
+      content: "\f303";
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      transition: all 0.3s;
+      margin-right: 5px; }
+  .journey .title {
+    margin: 10px 15px;
+    font-size: 24px; }
 
 body {
   font-family: "Muli", sans-serif;

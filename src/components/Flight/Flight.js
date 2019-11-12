@@ -49,7 +49,7 @@ export class Flight extends HTMLElement {
         return;
     }
     createPrice(price) {
-        if (!price) return '<span class="full">DOLU</span>';        
+        if (!price) return '<span class="full" disabled >DOLU</span>';        
         return `<span class="amount">${price.amount}</span>
                 <span class="decimal">${price.decimal}</span>
                 <span class="currency">${price.currency}</span>`;
@@ -105,7 +105,7 @@ export class Flight extends HTMLElement {
         let result = '<div class="brand-list">';
         if (brandList && brandList.length <= 0) return '';	
             brandList.forEach((brand, index) => {
-            result += 	`<div class="brand-item" brandindex='${index}' cabinindex="${cabinIndex}">
+            result += 	`<div class="brand-item ${brand.price ? '' : 'full'}" ${brand.price ? '' : 'disabled'} brandindex='${index}' cabinindex="${cabinIndex}">
 						<div class="brand-name">
 						${brand.name}
 						</div>
@@ -137,3 +137,5 @@ export class Flight extends HTMLElement {
         this.parentElement.selectFlight(this, cabinindex, brandindex);
     }
 }
+
+//window.customElements.define('flight-item', Flight);

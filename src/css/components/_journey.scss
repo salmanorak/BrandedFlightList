@@ -3,8 +3,9 @@
     '../variables/common-variables.scss',
     './flight-item.scss';
 
-
 .journey {
+	display: block;
+	margin-top:40px;
 	.direction {
 		display: inline-block;
 		margin-left: 15px;
@@ -16,6 +17,9 @@
 			@include transition();
 			font-size: 14px;
 			padding-right: 5px;
+		}
+		&.arrival{
+			background-color: blue;
 		}
 	}
 	#flight-list{

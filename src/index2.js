@@ -1,22 +1,22 @@
 import './css/main.scss';
 import { Flight } from '../src/components/Flight/Flight';
 import { FlightList } from '../src/components/Flight/FlightList';
-import { flightListData } from './data/data.js';
-import { FlightData as FlightDataModel } from './js/models/flightData.js';
+import { JourneyList } from '../src/components/Flight/JourneyList';
+import { Journey } from '../src/components/Flight/Journey';
+import { data } from './data/data.component';
 
-window.customElements.define('flight-list', FlightList);
 window.customElements.define('flight-item', Flight);
+window.customElements.define('flight-list', FlightList);
+window.customElements.define('journey-item', Journey);
+window.customElements.define('journey-list', JourneyList);
 
-const flights = flightListData.map(flight => new FlightDataModel(flight));
-
-//const data = [{ flightId: 1, summary: { departure: { port: 'IST', time: '12:00' }, arrival: { port: 'ADA', time: '14:00' } } }, { flightId: 2, summary: { departure: { port: 'IST', time: '14:00' }, arrival: { port: 'ADA', time: '16:00' } } }];
 
 //**** init ****//
-init(flights, 'journey');
+init(data, 'app');
 
 function init(flights, targetId) {
-    const targetElement = document.querySelector('#'.concat(targetId));
-    const element = document.createElement('flight-list');
+    const targetElement = document.getElementById(targetId);
+    const element = document.createElement('journey-list');
     targetElement.appendChild(element);
-    element.data = flights;
+    element.data = data;
 }
