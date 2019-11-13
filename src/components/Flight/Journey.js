@@ -1,5 +1,6 @@
 import { FlightData as FlightDataModel } from '../../js/models/flightData';
 
+// eslint-disable-next-line no-undef
 export class Journey extends HTMLElement {
     constructor() {
         super();

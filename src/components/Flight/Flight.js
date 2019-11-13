@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-undef
 export class Flight extends HTMLElement {
 	constructor() {
         super();

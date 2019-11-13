@@ -2,6 +2,7 @@ import { slide as slideHelper, findParent } from '../../js/utils';
 
 const slide = new slideHelper();
 
+// eslint-disable-next-line no-undef
 export class FlightList extends HTMLElement {
 	constructor() {
         super();
