@@ -58,6 +58,15 @@ export class FlightList extends HTMLElement {
                 this.closeOpenFlight(this._openFlight);
         }
         slide.down(flight.querySelector('.cabin-list-container'));
+        setTimeout(() => {
+            flight.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 400);
+       
+        /*
+        setTimeout(() => {
+            window.scrollTo({ left: 0, top: (flight.offsetTop + flight.offsetHeight), behavior: 'smooth' });
+        }, 300);
+        */
         this._openFlight = flight;
     }
     closeOpenFlight(openFlight) {

@@ -746,6 +746,162 @@ export const data = {
 							]
 						}
 					]
+				},
+				{
+					flightId: 5,
+					segments: [ 
+						{	
+							flightNumber: '33',
+							carrierCode: 'TK',
+							departure: {
+							port: 'FRA',
+							date: '02.03.2020',
+							time: '21:00'
+							},
+							arrival: {
+							port: 'IST',
+							date: '03.01.2020',
+							time: '23:55'
+							}
+						}
+					],
+					price: {
+						amount: 220,
+						decimal: 99,
+						currency: 'TRY'
+					},
+					cabinList: [
+						{ 
+							name: 'Economy',
+							brandList: [
+								{
+									name: 'Eco FLY',
+									type: 'Economy',
+									price: {
+										amount: 220,
+										decimal: 99,
+										currency: 'TRY'
+									},
+									rightList: [
+									'10 kg kabin bagajı',
+									'20 kg checkin bagajı'
+									]
+								},
+								{
+									name: 'Extra FLY',
+									type: 'Economy',
+									price: {
+										amount: 260,
+										decimal: 99,
+										currency: 'TRY'
+									},
+									rightList: [
+									'15 kg kabin bagajı',
+									'25 kg checkin bagajı',
+									'ikram',
+									'ücretsiz koltuk seçimi',
+									'ücretsiz değişiklik',
+									'cezalı iade'
+									]
+								},
+								{
+									name: 'Premium FLY',
+									type: 'Economy',
+									price: {
+										amount: 332,
+										decimal: 99,
+										currency: 'TRY'
+									},
+									rightList: [
+									'20 kg kabin bagajı',
+									'30 kg checkin bagajı',
+									'ikram',
+									'ücretsiz koltuk seçimi',
+									'ücretsiz değişiklik',
+									'cezasız iade'
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					flightId: 4,
+					segments: [ 
+						{	
+							flightNumber: '23',
+							carrierCode: 'TK',
+							departure: {
+							port: 'FRA',
+							date: '02.03.2020',
+							time: '22:00'
+							},
+							arrival: {
+							port: 'IST',
+							date: '03.03.2020',
+							time: '01:00'
+							}
+						}
+					],
+					price: {
+						amount: 220,
+						decimal: 99,
+						currency: 'TRY'
+					},
+					cabinList: [
+						{ 
+							name: 'Economy',
+							brandList: [
+								{
+									name: 'Eco FLY',
+									type: 'Economy',
+									price: {
+										amount: 220,
+										decimal: 99,
+										currency: 'TRY'
+									},
+									rightList: [
+									'10 kg kabin bagajı',
+									'20 kg checkin bagajı'
+									]
+								},
+								{
+									name: 'Extra FLY',
+									type: 'Economy',
+									price: {
+										amount: 260,
+										decimal: 99,
+										currency: 'TRY'
+									},
+									rightList: [
+									'15 kg kabin bagajı',
+									'25 kg checkin bagajı',
+									'ikram',
+									'ücretsiz koltuk seçimi',
+									'ücretsiz değişiklik',
+									'cezalı iade'
+									]
+								},
+								{
+									name: 'Premium FLY',
+									type: 'Economy',
+									price: {
+										amount: 332,
+										decimal: 99,
+										currency: 'TRY'
+									},
+									rightList: [
+									'20 kg kabin bagajı',
+									'30 kg checkin bagajı',
+									'ikram',
+									'ücretsiz koltuk seçimi',
+									'ücretsiz değişiklik',
+									'cezasız iade'
+									]
+								}
+							]
+						}
+					]
 				}
 			]
 		},
