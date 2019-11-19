@@ -1,6 +1,4 @@
-
-
- class Price {
+class Price {
     constructor(price) {
         this.amount = price.amount;
         this.decimal = price.decimal;

@@ -10,6 +10,7 @@ export class Flight extends HTMLElement {
         brandList.forEach(brand => {
             brand.onclick = this.selectFlight.bind(this);
         });
+        this.querySelector('.detail').addEventListener('click', this.openFlightDetail.bind(this));
     }
     get data() {
         return this._data;
@@ -137,6 +138,11 @@ export class Flight extends HTMLElement {
         const cabinindex = e.currentTarget.attributes.cabinindex.value;
         this.parentElement.selectFlight(this, cabinindex, brandindex);
     }
+    openFlightDetail() {
+        const flightDetails = document.createElement('flight-details');
+        flightDetails.flight = this.data;
+        document.querySelector('#app').appendChild(flightDetails);
+    }   
 }
 
 //window.customElements.define('flight-item', Flight);

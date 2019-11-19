@@ -31,7 +31,12 @@
 	}
 	&.selected {
 		.selected-flight{
-			display: block
+			display: block;
+			.flight-item{
+				.detail{
+					top:97px;
+				}
+			}
 		}
 		#flight-list{
 			display: none;

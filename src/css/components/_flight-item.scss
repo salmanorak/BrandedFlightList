@@ -28,7 +28,7 @@
                 @include empty-content;
                 @include vertical-align-center;
                 position: absolute;
-                left: 70px;
+                left: 20%;
                 height: 1px;
                 width: 55%;
                 background-color: gray;
@@ -44,9 +44,9 @@
                 @include horizantal-align-center;
                 position: absolute;
                 display: flex;
-                justify-content: space-evenly;
+                justify-content: space-around;
                 height: 17px;
-                width: 75%;
+                width: 60%;
                 bottom: 25px;
                 .segment-carrier-logo{
                     height: 17px;
@@ -114,7 +114,6 @@
         }
     }
     .detail{
-        display: none;;
         position: absolute;
         left: 10px;
         top: 75px;

@@ -1,15 +1,9 @@
 import './css/main.scss';
-import { Flight } from './components/Flight/Flight';
-import { FlightList } from './components/Flight/FlightList';
-import { JourneyList } from './components/Flight/JourneyList';
-import { Journey } from './components/Flight/Journey';
 import { data } from './data/data.component';
+import { registerCustomComponents } from './js/registerCustomComponents'; 
 
-window.customElements.define('flight-item', Flight);
-window.customElements.define('flight-list', FlightList);
-window.customElements.define('journey-item', Journey);
-window.customElements.define('journey-list', JourneyList);
-
+/** register custom Components **/
+registerCustomComponents();
 
 //**** init ****//
 init(data, 'app');

@@ -8,15 +8,14 @@
 
 body{
 	font-family: $main-font-family;
-	background-color: black;
 	user-select: none;
 }
 
 .container{
 	margin: 10px auto;
-	max-width: 500px;
 	background-color: white;
 	padding: 10px 20px;
+	position: relative;
 }
 
 

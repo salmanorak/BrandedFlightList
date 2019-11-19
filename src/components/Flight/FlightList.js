@@ -1,6 +1,6 @@
-import { slide as slideHelper, findParent } from '../../js/utils';
+import { animation as animationHelper, findParent } from '../../js/utils';
 
-const slide = new slideHelper();
+const animation = new animationHelper();
 
 // eslint-disable-next-line no-undef
 export class FlightList extends HTMLElement {
@@ -58,20 +58,14 @@ export class FlightList extends HTMLElement {
             } 
                 this.closeOpenFlight(this._openFlight);
         }
-        slide.down(flight.querySelector('.cabin-list-container'));
+        animation.slideDown(flight.querySelector('.cabin-list-container'));
         setTimeout(() => {
             flight.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }, 400);
-       
-        /*
-        setTimeout(() => {
-            window.scrollTo({ left: 0, top: (flight.offsetTop + flight.offsetHeight), behavior: 'smooth' });
-        }, 300);
-        */
         this._openFlight = flight;
     }
     closeOpenFlight(openFlight) {
-        slide.up(openFlight.querySelector('.cabin-list-container'));
+        animation.slideUp(openFlight.querySelector('.cabin-list-container'));
         this._openFlight = null;
     }
     selectFlight(flight, cabin, brand) {
