@@ -48,6 +48,8 @@ module.exports = {
           },
         ]
     },
-
-        
+    devServer: {
+      contentBase: './dist',
+     hot: true,
+    },
 };

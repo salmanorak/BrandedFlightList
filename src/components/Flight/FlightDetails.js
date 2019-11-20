@@ -33,6 +33,6 @@ export class FlightDetails extends HTMLElement {
     }
     showPrices() {
         this.remove();
-        this.flight.querySelector('.summary').click();
+        this.parentElement.querySelector('.summary').click();
     }
 }

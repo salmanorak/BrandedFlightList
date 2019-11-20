@@ -62,11 +62,14 @@ export class GeneralModal extends HTMLElement {
                 <div class="modal-body"></div>
                 <div class="modal-footer">
                     <div class="modal-buttons">
-                        ${buttons.map(button => `<div class="modal-button" onclick="${button.callback}">${button.title}</div>`).join('')}
+                        ${buttons.map(button => `<div class="modal-button">${button.title}</div>`).join('')}
                     </div>
                 </div>
             </div>
         `;
+        shadow.querySelectorAll('.modal-button').forEach((button, index) => {
+            button.addEventListener('click', this.buttons[index].callback.bind(this.parentElement));
+        });
         this.appendChild(this.createStyle());
         shadow.appendChild(this.createShadowStyle());
     }
@@ -80,8 +83,8 @@ export class GeneralModal extends HTMLElement {
             }
             .modal-body{
                 overflow: scroll;
-                height: 77vh;
                 box-sizing: border-box;
+                padding: 10px 15px;
             }
             .modal-header{
                 position: relative;
@@ -95,6 +98,7 @@ export class GeneralModal extends HTMLElement {
                 color: white;
             }
             .modal-footer{
+                position:fixed;
                 width: 100%;
                 bottom: 0;
                 padding-bottom: 10px;

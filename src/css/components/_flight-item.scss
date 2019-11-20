@@ -33,6 +33,9 @@
                 width: 55%;
                 background-color: gray;
             }
+            .from, .to{
+                width: 20%;
+            }
             .port{
                 font-weight: 300;
                 color:gray;
@@ -58,8 +61,8 @@
                 position: absolute;
                 display: flex;
                 top: 24%;
-                font-size: 10px;
-                width: 75%;
+                font-size: 8px;
+                width: 60%;
                 .direct{
                     @include horizantal-align-center;
                     position: absolute;
@@ -67,11 +70,12 @@
                 .layover-port-item{
                     @include horizantal-align-center;
                     position: absolute;
+                    white-space: nowrap;
                     &:after{
                         @include empty-content;
                         @include horizantal-align-center;                       
                         position: absolute;
-                        bottom: -19px;
+                        bottom: -22px;
                         height: 15px;
                         width: 15px;
                         border-radius: 50%;
