@@ -1,24 +1,42 @@
 class Price {
-    constructor(price) {
-        this.amount = price.amount;
-        this.decimal = price.decimal;
-        this.currency = price.currency;
+    constructor({ amount, decimal, currency }) {
+        this.amount = amount;
+        this.decimal = decimal;
+        this.currency = currency;
     }
 }
 
 class Brand {
-    constructor(brand) {
-        this.name = brand.name;
-        this.type = brand.type;
-        this.price = brand.price ? new Price(brand.price) : '';
-        this.rightList = brand.rightList;
+    constructor({ name, type, price, rightList }) {
+        this.name = name;
+        this.type = type;
+        this._price = price;
+        this.rightList = rightList;
+    }
+
+    get price() {
+        return this._price;     
+    }
+
+    set price(newPrice) {
+        if (!newPrice) return '';
+        this._price = new Price(newPrice);
     }
 }
 
 class Cabin {
-    constructor(cabin) {
-        this.name = cabin.name;
-        this.brandList = cabin.brandList.map(brand => new Brand(brand));
+    constructor({ name, brandList }) {
+        this.name = name;
+        this._brandList = brandList;
+    }
+
+    get brandList() {
+        return this._brandList;
+    }
+
+    set brandList(newBrandList) {
+        if (newBrandList.length === 0) return [];
+        this._brandList = newBrandList.map(brand => new Brand(brand));
     }
 }
 

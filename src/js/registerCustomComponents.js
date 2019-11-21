@@ -5,6 +5,7 @@ import { Journey } from '../components/Flight/Journey';
 import { GeneralModal } from '../components/Common/Modal';
 import { FlightDetails } from '../components/Flight/FlightDetails';
 
+
 export function registerCustomComponents() {
     window.customElements.define('flight-item', Flight);
     window.customElements.define('flight-list', FlightList);

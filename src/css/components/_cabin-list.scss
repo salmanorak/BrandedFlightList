@@ -4,10 +4,10 @@
 
 .cabin-list-container{
 	flex-direction: column;
-	margin-top: 10px;
 	@include transition(2s);
-	box-shadow: 5px 8px 5px 0px rgba(173,175,179,1);
-	margin: 10px;
+	box-shadow: 2px 2px 5px 0px rgba(173,175,179,1);
+	margin: 5px;
+	font-size: 12px;
 	.cabin{
 		display: flex;
 		justify-content: center;
@@ -95,5 +95,13 @@
 			}
 		}
 	
+	}
+}
+
+@media only screen and (min-width: $mini-midi-mobile-width) {
+	.cabin-list-container{
+		margin: 10px;
+		font-size: inherit;
+		box-shadow: 5px 8px 5px 0px rgba(173,175,179,1);
 	}
 }

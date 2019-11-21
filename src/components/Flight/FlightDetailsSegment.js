@@ -1,23 +1,16 @@
 // eslint-disable-next-line no-undef
-export class Flight extends HTMLElement {
+export class FlightDetailsSegment extends HTMLElement {
 	constructor() {
         super();
-        this._data = {};
-        this._isOpen = false;
+        this._flightData = {};
     }
     connectedCallback() {
-        this.querySelector('.summary').onclick = this.toogleBrandDetail.bind(this);
+        this.querySelector('.summary').onclick = this.toogleFlightDetail.bind(this);
         const brandList = this.querySelectorAll('.brand-item');
         brandList.forEach(brand => {
             brand.onclick = this.selectFlight.bind(this);
         });
         this.querySelector('.detail').addEventListener('click', this.openFlightDetail.bind(this));
-    }
-    get isOpen() {
-        return this._isOpen;
-    }
-    set isOpen(newValue) {
-        this._isOpen = newValue;
     }
     get data() {
         return this._data;
@@ -96,9 +89,7 @@ export class Flight extends HTMLElement {
             portList.push(port);
         }
         portList.forEach((port, index) => {
-            result += `<div class="layover-port-item" style="left:${(100 / (portList.length + 1)) * (index + 1)}%" >
-                        <span class="layover-port">${port}</span>
-                     </div>`;
+            result += `<div class="layover-port-item" style="left:${(100 / (portList.length + 1)) * (index + 1)}%" >${port}</div>`;
         });
         return result;
     }
@@ -139,9 +130,8 @@ export class Flight extends HTMLElement {
     
         return result;
     }
-    toogleBrandDetail() {
+    toogleFlightDetail() {
         this.parentElement.openFlightList(this);
-        this.toogleIsOpen();
     }
     selectFlight(e) {
         const brandindex = e.currentTarget.attributes.brandindex.value;
@@ -152,9 +142,7 @@ export class Flight extends HTMLElement {
         const flightDetails = document.createElement('flight-details');
         flightDetails.flight = this;
         document.querySelector('#app').appendChild(flightDetails);
-    } 
-    toogleIsOpen() {
-        this.isOpen = !this.isOpen;
-    }  
+    }   
 }
 
+//window.customElements.define('flight-item', Flight);

@@ -1,0 +1,251 @@
+.decimal {
+  vertical-align: top;
+  font-size: 0.5em; }
+  .decimal:before {
+    content: ".";
+    vertical-align: top; }
+
+.cabin-list-container {
+  flex-direction: column;
+  margin-top: 10px;
+  transition: all 2s;
+  box-shadow: 5px 8px 5px 0px #adafb3;
+  margin: 10px; }
+  .cabin-list-container .cabin {
+    display: flex;
+    justify-content: center; }
+    .cabin-list-container .cabin .cabin-info {
+      text-align: center;
+      flex: 1;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      line-height: 50px;
+      min-height: 120px; }
+    .cabin-list-container .cabin .brand-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 8; }
+      .cabin-list-container .cabin .brand-list .brand-item {
+        position: relative;
+        padding: 10px 10px 10px 60px; }
+        .cabin-list-container .cabin .brand-list .brand-item:before {
+          content: "";
+          top: 50%;
+          transform: translateY(-50%);
+          position: absolute;
+          left: 20px;
+          height: 20px;
+          width: 20px;
+          border-radius: 50%;
+          border: 2px solid gray; }
+        .cabin-list-container .cabin .brand-list .brand-item:after {
+          content: "";
+          top: 50%;
+          transform: translateY(-50%);
+          position: absolute;
+          left: 31px;
+          height: 0px;
+          width: 0px;
+          border-radius: 50%;
+          background-color: rgba(0, 0, 128, 0.7);
+          transition: all 0.2s; }
+        .cabin-list-container .cabin .brand-list .brand-item.full:after {
+          background-color: red; }
+        .cabin-list-container .cabin .brand-list .brand-item:hover:after {
+          height: 15px;
+          width: 15px;
+          left: 24px;
+          transition: all 0.3s; }
+        .cabin-list-container .cabin .brand-list .brand-item .brand-name {
+          font-weight: 600;
+          font-size: 1.2em; }
+        .cabin-list-container .cabin .brand-list .brand-item .right-list {
+          font-size: 0.8em; }
+          .cabin-list-container .cabin .brand-list .brand-item .right-list .right-item:not(:last-child):after {
+            content: ", "; }
+        .cabin-list-container .cabin .brand-list .brand-item .decimal {
+          line-height: 15px;
+          margin-left: -4px; }
+      .cabin-list-container .cabin .brand-list .brand-item + .brand-item {
+        border-top: 2px solid gray; }
+    .cabin-list-container .cabin.eco-cabin .cabin-info {
+      background-color: #dae0e8; }
+    .cabin-list-container .cabin.eco-cabin .brand-list {
+      background-color: #e8ecf0; }
+    .cabin-list-container .cabin.bus-cabin .cabin-info {
+      background-color: #f5e5de;
+      color: #cc8566; }
+    .cabin-list-container .cabin.bus-cabin .brand-list {
+      background-color: #f7efea; }
+
+.flight-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 0 10px; }
+  .flight-item .summary {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px; }
+    .flight-item .summary .flight-summary {
+      position: relative;
+      flex: 5;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      box-shadow: 2px 2px 5px 0px #adafb3;
+      padding: 25px 5px;
+      min-height: 40px; }
+      .flight-item .summary .flight-summary:before {
+        content: "";
+        top: 50%;
+        transform: translateY(-50%);
+        position: absolute;
+        left: 20%;
+        height: 1px;
+        width: 55%;
+        background-color: gray; }
+      .flight-item .summary .flight-summary .from, .flight-item .summary .flight-summary .to {
+        width: 20%; }
+      .flight-item .summary .flight-summary .port {
+        font-weight: 300;
+        color: gray; }
+      .flight-item .summary .flight-summary .time {
+        font-weight: 700; }
+      .flight-item .summary .flight-summary .flight-logo {
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        display: flex;
+        justify-content: space-around;
+        height: 17px;
+        width: 60%;
+        bottom: 25px; }
+        .flight-item .summary .flight-summary .flight-logo .segment-carrier-logo {
+          height: 17px;
+          width: auto; }
+      .flight-item .summary .flight-summary .layover-port-list {
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        display: flex;
+        top: 24%;
+        font-size: 8px;
+        width: 60%; }
+        .flight-item .summary .flight-summary .layover-port-list .direct {
+          left: 50%;
+          transform: translateX(-50%);
+          position: absolute; }
+        .flight-item .summary .flight-summary .layover-port-list .layover-port-item {
+          left: 50%;
+          transform: translateX(-50%);
+          position: absolute;
+          white-space: nowrap; }
+          .flight-item .summary .flight-summary .layover-port-list .layover-port-item:after {
+            content: "";
+            left: 50%;
+            transform: translateX(-50%);
+            position: absolute;
+            bottom: -22px;
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            border: 1px solid gray;
+            background-color: white; }
+    .flight-item .summary .best-price {
+      position: relative;
+      flex: 2;
+      box-shadow: 2px 2px 5px 0px #adafb3;
+      padding: 25px 5px;
+      margin-left: 5px;
+      min-height: 40px;
+      line-height: 40px; }
+      .flight-item .summary .best-price .brand {
+        position: absolute;
+        top: 0;
+        left: 5px;
+        font-size: 12px; }
+      .flight-item .summary .best-price .decimal {
+        line-height: 35px;
+        margin-left: -4px; }
+    .flight-item .summary .icon {
+      transition: all 0.3s;
+      position: absolute;
+      right: 10px;
+      color: red; }
+      .flight-item .summary .icon:after {
+        content: "\f105";
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        transition: all 0.3s;
+        font-size: 1.2em; }
+  .flight-item .detail {
+    position: absolute;
+    left: 10px;
+    top: 75px;
+    font-size: 12px;
+    color: blue;
+    width: 120px;
+    text-decoration: underline;
+    font-style: italic; }
+  .flight-item.slideDown .icon {
+    transition: all 0.3s;
+    transform: rotate(90deg); }
+
+.journey {
+  display: block;
+  margin-top: 40px; }
+  .journey .direction {
+    display: inline-block;
+    margin-left: 15px;
+    padding: 2px 60px 2px 5px;
+    background-color: red;
+    color: white; }
+    .journey .direction:before {
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      transition: all 0.3s;
+      font-size: 14px;
+      padding-right: 5px; }
+    .journey .direction.arrival {
+      background-color: blue; }
+  .journey #flight-list {
+    display: flex;
+    flex-direction: column; }
+  .journey .selected-flight {
+    display: none; }
+  .journey.selected .selected-flight {
+    display: block; }
+    .journey.selected .selected-flight .flight-item .detail {
+      top: 97px; }
+  .journey.selected #flight-list {
+    display: none; }
+  .journey .show-flight-list {
+    display: inline-block;
+    margin-left: 7px;
+    font-style: italic;
+    border-radius: 5px; }
+    .journey .show-flight-list:before {
+      content: "\f303";
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      transition: all 0.3s;
+      margin-right: 5px; }
+  .journey .title {
+    margin: 10px 15px;
+    font-size: 24px; }
+
+body {
+  font-family: "Muli", sans-serif;
+  user-select: none; }
+
+.container {
+  margin: 10px auto;
+  background-color: white;
+  padding: 10px 20px;
+  position: relative; }
+

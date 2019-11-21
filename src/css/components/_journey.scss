@@ -55,8 +55,14 @@
 	}
 	.title{
 		margin : 10px 15px;
-		font-size:24px;
+		font-size:16px;
 	}
+}
 
-
+@media only screen and (min-width: $mini-midi-mobile-width) {
+	.journey{
+		.title{
+			font-size:24px;
+		}
+	}
 }

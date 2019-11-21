@@ -3,6 +3,8 @@
     '../variables/common-variables.scss',
     '../components/cabin-list';
 
+
+
 .flight-item{
     position: relative;
     display: flex;
@@ -15,6 +17,7 @@
         justify-content: center;
         align-items: center;
         margin: 5px;
+        font-size:12px;
         .flight-summary{
             position: relative;
             flex:5;
@@ -52,7 +55,7 @@
                 width: 60%;
                 bottom: 25px;
                 .segment-carrier-logo{
-                    height: 17px;
+                    height: 15px;
                     width: auto;
                 }
             }
@@ -71,13 +74,17 @@
                     @include horizantal-align-center;
                     position: absolute;
                     white-space: nowrap;
+                    .layover-port{
+                        opacity: 0;
+                    }
                     &:after{
                         @include empty-content;
                         @include horizantal-align-center;                       
                         position: absolute;
-                        bottom: -22px;
-                        height: 15px;
-                        width: 15px;
+                        bottom: -19px;
+                        height: 10px;
+                        width: 10px;
+                        opacity: 1;
                         border-radius: 50%;
                         border: 1px solid gray;
                         background-color: white;
@@ -103,6 +110,11 @@
             .decimal{
                 line-height: 35px;
                 margin-left:-4px;
+            }
+            .currency{
+                position: absolute;
+                top:10px;
+                left: 5px;
             }
         }
         .icon{
@@ -133,4 +145,35 @@
     }
 }
 
-
+@media only screen and (min-width: $mini-midi-mobile-width) {
+    .flight-item{
+        .summary{
+            font-size: inherit;
+            .flight-summary{
+                .flight-logo{
+                    .segment-carrier-logo{
+                        height: 17px;
+                        width: auto;
+                    }
+                }
+                .layover-port-list{
+                    .layover-port-item{
+                        .layover-port{
+                            opacity:1;
+                        }
+                        &:after{
+                            height: 15px;
+                            width: 15px;
+                            bottom:-22px;
+                        }
+                    }
+                }
+            }
+            .best-price{
+                .currency{
+                    position: initial;
+                }
+            }
+        }
+    }
+}

@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'app.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
     },
     plugins: [
         new MiniCssExtractPlugin({
@@ -49,7 +49,7 @@ module.exports = {
         ]
     },
     devServer: {
-      contentBase: './dist',
+      contentBase: './docs',
      hot: true,
     },
 };

@@ -14,10 +14,15 @@ body{
 .container{
 	margin: 10px auto;
 	background-color: white;
-	padding: 10px 20px;
+	padding: 0 5px;
 	position: relative;
 }
 
+@media only screen and (min-width: $mini-midi-mobile-width) {
+	.container{
+		padding: 10px 20px;
+	}
+}
 
 
 

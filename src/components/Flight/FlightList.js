@@ -65,6 +65,7 @@ export class FlightList extends HTMLElement {
         this._openFlight = flight;
     }
     closeOpenFlight(openFlight) {
+        openFlight.toogleIsOpen();
         animation.slideUp(openFlight.querySelector('.cabin-list-container'));
         this._openFlight = null;
     }

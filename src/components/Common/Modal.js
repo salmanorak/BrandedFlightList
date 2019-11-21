@@ -63,12 +63,14 @@ export class GeneralModal extends HTMLElement {
                 <div class="modal-footer">
                     <div class="modal-buttons">
                         ${buttons.map(button => `<div class="modal-button">${button.title}</div>`).join('')}
+                        <div id="close" class="modal-button" >Close</div>
                     </div>
                 </div>
             </div>
         `;
-        shadow.querySelectorAll('.modal-button').forEach((button, index) => {
-            button.addEventListener('click', this.buttons[index].callback.bind(this.parentElement));
+        shadow.querySelector('#close').addEventListener('click', this.closeModal.bind(this));
+        shadow.querySelectorAll('.modal-button:not(#close)').forEach((button, index) => {
+            button.addEventListener('click', this.buttons[index].callback.bind(this));
         });
         this.appendChild(this.createStyle());
         shadow.appendChild(this.createShadowStyle());

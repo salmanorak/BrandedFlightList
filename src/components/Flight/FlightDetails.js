@@ -13,10 +13,9 @@ export class FlightDetails extends HTMLElement {
         const modal = document.createElement('general-modal');
         modal.modalTitle = 'Flight Detail';
         modal.buttons = [
-            { title: 'Show Price', callback: this.showPrices.bind(this) },
-            { title: 'Close', callback: modal.closeModal },
+            { title: 'Show Price', callback: this.showPrices.bind(this) }
         ];
-        modal.content = this.createFlightDetail(this.flight);
+        modal.content = this.createFlightDetail(this.flight.data);
         this.appendChild(modal);
         animation.fadeIn(this);
     }
@@ -28,11 +27,17 @@ export class FlightDetails extends HTMLElement {
     }
     createFlightDetail(flight) {
         return `
-            <div>${flight.flightId}</div>
+            <div class="flight-detail-container"> 
+                <div class="flight-title"> ${flight.summary.departure.port} - ${flight.summary.arrival.port} ${flight.summary.departure.date}</div>
+                <div class="segment-list">
+                </div>
+            </div>
         `;
     }
     showPrices() {
+        if (!this.flight.isOpen) {
+            this.flight.querySelector('.summary').click();
+        }
         this.remove();
-        this.parentElement.querySelector('.summary').click();
     }
 }
