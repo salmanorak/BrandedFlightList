@@ -7,10 +7,10 @@
 
 .cabin-list-container {
   flex-direction: column;
-  margin-top: 10px;
   transition: all 2s;
-  box-shadow: 5px 8px 5px 0px #adafb3;
-  margin: 10px; }
+  box-shadow: 2px 2px 5px 0px #adafb3;
+  margin: 5px;
+  font-size: 12px; }
   .cabin-list-container .cabin {
     display: flex;
     justify-content: center; }
@@ -79,6 +79,12 @@
     .cabin-list-container .cabin.bus-cabin .brand-list {
       background-color: #f7efea; }
 
+@media only screen and (min-width: 440px) {
+  .cabin-list-container {
+    margin: 10px;
+    font-size: inherit;
+    box-shadow: 5px 8px 5px 0px #adafb3; } }
+
 .flight-item {
   position: relative;
   display: flex;
@@ -90,7 +96,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5px; }
+    margin: 5px;
+    font-size: 12px; }
     .flight-item .summary .flight-summary {
       position: relative;
       flex: 5;
@@ -126,7 +133,7 @@
         width: 60%;
         bottom: 25px; }
         .flight-item .summary .flight-summary .flight-logo .segment-carrier-logo {
-          height: 17px;
+          height: 15px;
           width: auto; }
       .flight-item .summary .flight-summary .layover-port-list {
         left: 50%;
@@ -145,14 +152,17 @@
           transform: translateX(-50%);
           position: absolute;
           white-space: nowrap; }
+          .flight-item .summary .flight-summary .layover-port-list .layover-port-item .layover-port {
+            opacity: 0; }
           .flight-item .summary .flight-summary .layover-port-list .layover-port-item:after {
             content: "";
             left: 50%;
             transform: translateX(-50%);
             position: absolute;
-            bottom: -22px;
-            height: 15px;
-            width: 15px;
+            bottom: -19px;
+            height: 10px;
+            width: 10px;
+            opacity: 1;
             border-radius: 50%;
             border: 1px solid gray;
             background-color: white; }
@@ -172,6 +182,10 @@
       .flight-item .summary .best-price .decimal {
         line-height: 35px;
         margin-left: -4px; }
+      .flight-item .summary .best-price .currency {
+        position: absolute;
+        top: 12px;
+        left: 5px; }
     .flight-item .summary .icon {
       transition: all 0.3s;
       position: absolute;
@@ -196,6 +210,21 @@
     transition: all 0.3s;
     transform: rotate(90deg); }
 
+@media only screen and (min-width: 440px) {
+  .flight-item .summary {
+    font-size: inherit; }
+    .flight-item .summary .flight-summary .flight-logo .segment-carrier-logo {
+      height: 17px;
+      width: auto; }
+    .flight-item .summary .flight-summary .layover-port-list .layover-port-item .layover-port {
+      opacity: 1; }
+    .flight-item .summary .flight-summary .layover-port-list .layover-port-item:after {
+      height: 15px;
+      width: 15px;
+      bottom: -22px; }
+    .flight-item .summary .best-price .currency {
+      position: initial; } }
+
 .journey {
   display: block;
   margin-top: 40px; }
@@ -219,9 +248,27 @@
   .journey .selected-flight {
     display: none; }
   .journey.selected .selected-flight {
+    position: relative;
     display: block; }
     .journey.selected .selected-flight .flight-item .detail {
       top: 97px; }
+    .journey.selected .selected-flight:after {
+      display: block;
+      position: absolute;
+      content: "\f00c";
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+      opacity: 0.7;
+      top: 55px;
+      height: 20px;
+      width: 20px;
+      background-color: green;
+      color: white;
+      font-weight: 700;
+      font-size: 10px;
+      border-radius: 50%;
+      line-height: 20px;
+      text-align: center; }
   .journey.selected #flight-list {
     display: none; }
   .journey .show-flight-list {
@@ -237,7 +284,17 @@
       margin-right: 5px; }
   .journey .title {
     margin: 10px 15px;
+    font-size: 16px; }
+
+@media only screen and (min-width: 440px) {
+  .journey .title {
     font-size: 24px; }
+  .journey.selected .selected-flight:after {
+    font-size: 15px;
+    height: 25px;
+    width: 25px;
+    line-height: 25px;
+    left: -4px; } }
 
 body {
   font-family: "Muli", sans-serif;
@@ -246,6 +303,9 @@ body {
 .container {
   margin: 10px auto;
   background-color: white;
-  padding: 10px 20px;
+  padding: 0 5px;
   position: relative; }
 
+@media only screen and (min-width: 440px) {
+  .container {
+    padding: 0 20px; } }
