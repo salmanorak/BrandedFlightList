@@ -36,7 +36,7 @@ export class FlightDetails extends HTMLElement {
     }
     showPrices() {
         if (!this.flight.isOpen) {
-            this.flight.querySelector('.summary').click();
+            this.flight.toogleBrandDetail();
         }
         this.remove();
     }

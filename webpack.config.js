@@ -39,7 +39,7 @@ module.exports = {
               {
                 loader: MiniCssExtractPlugin.loader,
                 options: {
-                    publicPath: './dist',
+                    publicPath: './docs',
                   }
               },
               'css-loader',
