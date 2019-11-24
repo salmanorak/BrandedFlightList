@@ -76,7 +76,7 @@ export class GeneralModal extends HTMLElement {
                 <div class="modal-footer">
                     <div class="modal-buttons">
                         ${buttons.map(button => `<div class="modal-button">${button.title}</div>`).join('')}
-                        <div id="close" class="modal-button" >Close</div>
+                        <div id="close" class="modal-button" >Kapat</div>
                     </div>
                 </div>
             </div>

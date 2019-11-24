@@ -51,7 +51,7 @@ export class Flight extends HTMLElement {
             </div>
             ${brand ? '' : '<div class="icon"></div>'}
         </div>
-        <span class="detail">Uçuş Detaylarını Göster</span>
+        <span class="detail">Uçuş Detayları</span>
         ${brand ? '' : this.createCabinList(flight.cabinList)}`;
 
         item.innerHTML = flightHTML;

@@ -11,10 +11,10 @@ export class FlightDetails extends HTMLElement {
     connectedCallback() {
         this.style.opacity = 0;
         const modal = document.createElement('general-modal');
-        modal.modalTitle = 'Flight Detail';
+        modal.modalTitle = 'Uçuş Detayları';
         if (!this.flight.data.selectedbrand) {
             modal.buttons = [
-                { title: 'Show Price', callback: this.showPrices.bind(this) }
+                { title: 'Ücretleri Göster', callback: this.showPrices.bind(this) }
             ];
         }
         modal.content = this.createFlightDetail(this.flight.data);
