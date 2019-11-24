@@ -299,9 +299,8 @@
 body {
   font-family: "Muli", sans-serif;
   user-select: none;
-  max-width: 768px; 
-  margin: 0 auto;
-}
+  max-width: 768px;
+  margin: 0 auto; }
 
 .container {
   margin: 10px auto;
