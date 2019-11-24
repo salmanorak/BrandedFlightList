@@ -131,12 +131,13 @@
     }
     .detail{
         position: absolute;
-        left: 10px;
-        top: 75px;
-        font-size: 12px;
+        left: 5px;
+        top: 76px;
+        font-size: 10px;
         color: blue;
-        text-decoration: underline;
-        font-style: italic;
+        background-color: rgba(169, 169, 169, 0.5);
+        padding: 3px 10px;
+        border-top-right-radius: 14px;
     }
     &.slideDown .icon{
         @include transition();
