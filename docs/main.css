@@ -57,6 +57,21 @@
           width: 15px;
           left: 24px;
           transition: all 0.3s; }
+        .cabin-list-container .cabin .brand-list .brand-item:hover .tooltip {
+          opacity: 1;
+          transition: all .2s; }
+        .cabin-list-container .cabin .brand-list .brand-item .tooltip {
+          position: absolute;
+          top: -30px;
+          left: 40px;
+          opacity: 0;
+          width: 80%;
+          background-color: black;
+          color: #fff;
+          text-align: center;
+          padding: 5px 0;
+          border-radius: 6px;
+          transition: all .3s; }
         .cabin-list-container .cabin .brand-list .brand-item .brand-name {
           font-weight: 600;
           font-size: 1.2em; }
