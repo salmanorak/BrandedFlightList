@@ -132,12 +132,13 @@
     .detail{
         position: absolute;
         left: 5px;
-        top: 77px;
-        font-size: 10px;
-        color: blue;
-        background-color: rgba(169, 169, 169, 0.5);
+        top: 74px;
+        font-size: 12px;
+        color: white;
+        background-color: #cb278a;
         padding: 3px 10px;
         border-top-right-radius: 14px;
+        font-weight: 700;
     }
     &.slideDown .icon{
         @include transition();
