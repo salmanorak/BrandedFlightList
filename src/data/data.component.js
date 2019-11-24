@@ -240,7 +240,7 @@ export const data = {
 					flightId: 3,
 					segments: [ 
 						{	
-							flightNumber: '3',
+							flightNumber: 'TK1276',
 							carrierCode: 'TK',
 							departure: {
 							port: 'IST',
@@ -254,7 +254,7 @@ export const data = {
 							}
 						},
 						{
-							flightNumber: '3',
+							flightNumber: 'TK7375',
 							carrierCode: 'AJ',
 							departure: {
 							port: 'TZX',
@@ -268,7 +268,7 @@ export const data = {
 							}
 						},
 						{
-							flightNumber: '3',
+							flightNumber: 'TK2312',
 							carrierCode: 'JB',
 							departure: {
 							port: 'ADA',
@@ -346,7 +346,7 @@ export const data = {
 					flightId: 4,
 					segments: [ 
 						{	
-							flightNumber: '5',
+							flightNumber: 'TK5',
 							carrierCode: 'TK',
 							departure: {
 							port: 'IST',
@@ -360,7 +360,7 @@ export const data = {
 							}
 						},
 						{
-							flightNumber: '6',
+							flightNumber: 'TK6',
 							carrierCode: 'AJ',
 							departure: {
 							port: 'ESB',
@@ -374,7 +374,7 @@ export const data = {
 							}
 						},
 						{
-							flightNumber: '7',
+							flightNumber: 'TK7',
 							carrierCode: 'JB',
 							departure: {
 							port: 'ADA',
@@ -751,7 +751,7 @@ export const data = {
 					flightId: 5,
 					segments: [ 
 						{	
-							flightNumber: '33',
+							flightNumber: 'TK33',
 							carrierCode: 'TK',
 							departure: {
 							port: 'FRA',
@@ -829,7 +829,7 @@ export const data = {
 					flightId: 4,
 					segments: [ 
 						{	
-							flightNumber: '23',
+							flightNumber: 'TK23',
 							carrierCode: 'TK',
 							departure: {
 							port: 'FRA',

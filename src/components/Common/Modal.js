@@ -12,6 +12,7 @@ export class GeneralModal extends HTMLElement {
         this._buttons = [];
         this._animation = '';
         this._isParentModal = true;
+        this._externalCss = '';
     }
     connectedCallback() {
         document.body.style.overflow = 'hidden';
@@ -46,6 +47,13 @@ export class GeneralModal extends HTMLElement {
     }
     set modalTitle(modalTitle) {
         this._modalTitle = modalTitle;
+    }
+    get externalCss() {
+        return this._externalCss;
+    }
+    set externalCss(newCSS) {
+        this._externalCss = newCSS;
+        this.shadowRoot.appendChild(newCSS);
     }
     setBody(content) {
         this.shadowRoot.querySelector('.modal-body').innerHTML = content;
