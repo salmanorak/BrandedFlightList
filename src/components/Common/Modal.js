@@ -18,6 +18,10 @@ export class GeneralModal extends HTMLElement {
         document.body.style.overflow = 'hidden';
         this.setAttribute(this._modalId, '');
         this.shadowRoot.querySelector('.close-button').addEventListener('click', this.closeModal.bind(this));
+        const modalBody = this.shadowRoot.querySelector('.modal-body');
+        const modalHeader = this.shadowRoot.querySelector('.modal-header');
+        const modalFooter = this.shadowRoot.querySelector('.modal-footer');
+        modalBody.style.height = `${window.innerHeight - modalHeader.clientHeight - modalFooter.clientHeight}px`;
     }
     disconnectedCallback() {
         document.body.style.overflow = 'auto';
@@ -56,7 +60,8 @@ export class GeneralModal extends HTMLElement {
         this.shadowRoot.appendChild(newCSS);
     }
     setBody(content) {
-        this.shadowRoot.querySelector('.modal-body').innerHTML = content;
+        const modalBody = this.shadowRoot.querySelector('.modal-body');
+        modalBody.innerHTML = content;
     }
     createModalTemplate(title, buttons) {
         this.attachShadow({ mode: 'open' });
@@ -92,7 +97,7 @@ export class GeneralModal extends HTMLElement {
                 min-height: 200px;
             }
             .modal-body{
-                overflow: scroll;
+                overflow: hidden scroll;
                 box-sizing: border-box;
                 padding: 10px 15px;
             }
@@ -111,8 +116,10 @@ export class GeneralModal extends HTMLElement {
                 position:fixed;
                 width: 100%;
                 bottom: 0;
-                padding-bottom: 10px;
+                padding: 10px 0;
                 text-align: center;
+                background-color: white;
+                border-top: 1px solid  rgba(169, 169, 169, 0.5)
             }
             .modal-buttons{
                 width: 100%;

@@ -126,6 +126,7 @@ export class FlightDetails extends HTMLElement {
             }
             .departure-date, .arrival-date{
                 font-size: 12px;
+                color: gray;
             }
             .segment-carrier{
                 font-style: italic;
