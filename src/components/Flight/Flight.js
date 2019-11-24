@@ -116,7 +116,8 @@ export class Flight extends HTMLElement {
         let result = '<div class="brand-list">';
         if (brandList && brandList.length <= 0) return '';	
             brandList.forEach((brand, index) => {
-            result += 	`<div class="brand-item ${brand.price ? '' : 'full'}" ${brand.price ? '' : 'disabled'} brandindex='${index}' cabinindex="${cabinIndex}">
+            result += 	`<div class="brand-item ${brand.price ? '' : 'full'}" brandindex='${index}' cabinindex="${cabinIndex}">
+                        ${brand.price ? '' : '<div class="tooltip">Bu ücret grubu dolduğu için seçilememektedir.</div>'}
 						<div class="brand-name">
 						${brand.name}
 						</div>
