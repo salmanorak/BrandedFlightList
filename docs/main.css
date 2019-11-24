@@ -267,7 +267,7 @@
     position: relative;
     display: block; }
     .journey.selected .selected-flight .flight-item .detail {
-      top: 97px; }
+      top: 94px; }
     .journey.selected .selected-flight:after {
       display: block;
       position: absolute;
