@@ -63,6 +63,7 @@ export class FlightList extends HTMLElement {
             flight.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }, 400);
         this._openFlight = flight;
+        flight.toogleIsOpen();
     }
     closeOpenFlight(openFlight) {
         openFlight.toogleIsOpen();

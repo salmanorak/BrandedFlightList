@@ -141,7 +141,6 @@ export class Flight extends HTMLElement {
     }
     toogleBrandDetail() {
         this.parentElement.openFlightList(this);
-        this.toogleIsOpen();
     }
     selectFlight(e) {
         const brandindex = e.currentTarget.attributes.brandindex.value;

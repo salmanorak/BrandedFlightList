@@ -9,6 +9,8 @@
 body{
 	font-family: $main-font-family;
 	user-select: none;
+	max-width: 768px;
+	margin: 0 auto;
 }
 
 .container{
