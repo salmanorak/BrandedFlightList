@@ -80,12 +80,13 @@ export class FlightList extends HTMLElement {
         selectedFlight.innerHTML = '';
         selectedFlight.appendChild(newFlight);
         selectedFlight.querySelector('.summary').onclick = '';
-        selectedFlight.querySelector('.show-flight-list').onclick = this.showFlightList;
+        selectedFlight.querySelector('.show-flight-list').onclick = this.showFlightList.bind(flight);
     }
     showFlightList(e) {
         const journey = findParent(e.currentTarget, 'journey', 'class');
         journey.classList.remove('selected');
         journey.querySelector('.selected-flight .flight-item').remove();
+        this.data.selectedbrand = '';
     }
 }
 
