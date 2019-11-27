@@ -51,7 +51,7 @@ export class Flight extends HTMLElement {
             </div>
             ${brand ? '' : '<div class="icon"></div>'}
         </div>
-        <span class="detail">Uçuş Detayları</span>
+        <span class="detail" style="background-color:rgba(${this.randomColor()},${this.randomColor()},${this.randomColor()})">Uçuş Detayları</span>
         ${brand ? '' : this.createCabinList(flight.cabinList)}`;
 
         item.innerHTML = flightHTML;
@@ -59,9 +59,9 @@ export class Flight extends HTMLElement {
     }
     createPrice(price) {
         if (!price) return '<span class="full" disabled >DOLU</span>';        
-        return `<span class="amount">${price.amount}</span>
-                <span class="decimal">${price.decimal}</span>
-                <span class="currency">${price.currency}</span>`;
+        return `<span class = "amount">${price.amount}</span>
+                <span class = "decimal">${price.decimal}</span>
+                <span class = "currency">${price.currency}</span>`;
     }
     createAirlineLogo(carrierList) {
         let result = '';
@@ -155,6 +155,9 @@ export class Flight extends HTMLElement {
     } 
     toogleIsOpen() {
         this.isOpen = !this.isOpen;
-    }  
+    }
+    randomColor() {
+        return Math.floor(Math.random() * 255) + 1;
+    }
 }
 
