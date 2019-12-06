@@ -259,6 +259,7 @@
     .journey .direction.arrival {
       background-color: blue; }
   .journey + .journey {
+    margin-top: 10px;
     border-top: 1px solid lightgray; }
   .journey #flight-list {
     display: flex;
