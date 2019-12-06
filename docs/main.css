@@ -258,8 +258,8 @@
       padding-right: 5px; }
     .journey .direction.arrival {
       background-color: blue; }
-    .journey .direction + .journey {
-      border-top: 1px solid lightgray; }
+  .journey + .journey {
+    border-top: 1px solid lightgray; }
   .journey #flight-list {
     display: flex;
     flex-direction: column; }
