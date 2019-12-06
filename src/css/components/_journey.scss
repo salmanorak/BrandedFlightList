@@ -21,6 +21,9 @@
 		&.arrival{
 			background-color: blue;
 		}
+		&+.journey{
+			border-top: 1px solid lightgray;
+		}
 	}
 	#flight-list{
 		display: flex;
