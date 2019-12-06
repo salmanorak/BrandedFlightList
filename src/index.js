@@ -6,11 +6,11 @@ import { registerCustomComponents } from './js/registerCustomComponents';
 registerCustomComponents();
 
 //**** init ****//
-init(data, 'app');
+init(data, 'body');
 
 function init(flights, targetId) {
     const targetElement = document.getElementById(targetId);
     const element = document.createElement('journey-list');
     targetElement.appendChild(element);
-    element.data = data;
+    element.data = flights;
 }
