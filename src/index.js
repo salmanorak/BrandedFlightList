@@ -8,8 +8,8 @@ registerCustomComponents();
 //**** init ****//
 init(data, 'body');
 
-function init(flights, targetId) {
-    const targetElement = document.getElementById(targetId);
+function init(flights, target) {
+    const targetElement = document.querySelector(target);
     const element = document.createElement('journey-list');
     targetElement.appendChild(element);
     element.data = flights;
