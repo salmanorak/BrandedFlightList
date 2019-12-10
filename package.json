@@ -4,11 +4,10 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "jest",
     "build": "webpack --mode=development",
     "buildp": "webpack",
     "start": "webpack-dev-server",
-    "iTest": "webpack --config=webpack.tests.config.js && jest --config=jest.integration.config.js --coverage"
+    "test": "jest --config=jest.config.js"
   },
   "repository": {
     "type": "git",

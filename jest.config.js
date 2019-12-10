@@ -1,4 +1,4 @@
 module.exports = {
-  setupFilesAfterEnv: ['./setup.js'],
+  setupFilesAfterEnv: ['./test/setup.js'],
   collectCoverage: true,
 };

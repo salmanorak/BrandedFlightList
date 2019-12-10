@@ -43,7 +43,6 @@ export class Flight extends HTMLElement {
                 </div>
                 <div class="flight-logo">${this.createAirlineLogo(flight.summary.carrierList)}</div>
                 <div class="layover-port-list">${this.createLayoverPort(flight.segments)}</div>
-
             </div>
             <div class="best-price">
                 ${brand ? `<div class="brand">${brand.name}</div>` : ''}
@@ -151,7 +150,7 @@ export class Flight extends HTMLElement {
     openFlightDetail() {
         const flightDetails = document.createElement('flight-details');
         flightDetails.flight = this;
-        document.querySelector('#app').appendChild(flightDetails);
+        document.body.appendChild(flightDetails);
     } 
     toogleIsOpen() {
         this.isOpen = !this.isOpen;
