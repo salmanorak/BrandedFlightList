@@ -1,8 +1,8 @@
 # BrandedFlightList
-<span> Live demo: 
+<span>  
     <a 
         href="https://salmanorak.github.io/BrandedFlightList/" 
         target="_blank">
-        https://salmanorak.github.io/BrandedFlightList/
+        Live demo
     </a>
 </span>
